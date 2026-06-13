@@ -1,0 +1,59 @@
+.body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.regContainer{
+  background-color: orange;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  padding: 100px;
+  flex-direction: column;
+  box-shadow: 5px 10px 20px black;
+  border-radius: 15px 0px 0px 15px ;
+  color: white;
+} 
+button{
+  cursor: pointer;
+  color: orange;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  
+}
+.reqSignin{
+  background-color: white;
+  height: 300px;
+  border-radius: 0px 15px 15px 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 5px 10px 20px black;
+
+}
+.reqSignin ,h1, p {
+  color: orange;
+}
+.reqSignin button{
+  background-color: orange;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+
+
+}
+.reqSignin input{
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
