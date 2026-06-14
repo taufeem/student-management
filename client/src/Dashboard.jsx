@@ -48,7 +48,7 @@ function Dashboard() {
       {
         method: "DELETE",
         headers:{
-          Authorization: `Bearer ${token}`,
+          Authorization: token,
         }
       },
     );
