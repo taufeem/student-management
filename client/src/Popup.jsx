@@ -27,7 +27,7 @@ function Popup({setPop,fetchStudetn,editStudent}) {
     };
     if (editStudent) {
    await fetch(
-      `http://localhost:3000/students/${editStudent._id}`,
+      `https://student-management-p6ht.onrender.com/students/${editStudent._id}`,
       {
          method: "PUT",
          headers: {
@@ -40,7 +40,7 @@ function Popup({setPop,fetchStudetn,editStudent}) {
 
 else {
    await fetch(
-      "http://localhost:3000/students",
+      "https://student-management-p6ht.onrender.com/students",
       {
          method: "POST",
          headers: {

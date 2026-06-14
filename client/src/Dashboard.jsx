@@ -19,7 +19,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const fetchStudetn = async () => {
-    const response = await fetch("http://localhost:3000/students");
+    const response = await fetch("https://student-management-p6ht.onrender.com/students");
     const data = await response.json();
 
     setStudent(data);
@@ -44,7 +44,7 @@ function Dashboard() {
     }
 
     const response = await fetch(
-      `http://localhost:3000/students/${selectedId}`,
+      `https://student-management-p6ht.onrender.com/students/${selectedId}`,
       {
         method: "DELETE",
       },

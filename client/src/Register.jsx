@@ -11,7 +11,7 @@ function Register() {
      e.preventDefault();
   
     
-    fetch("http://localhost:3000/users/register",{
+    fetch("https://student-management-p6ht.onrender.com/students/users/register",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
