@@ -19,3 +19,4 @@ const auth = (req, res, next) => {
     res.status(401).send("Invalid Token");
   }
 };
+module.exports = auth;
