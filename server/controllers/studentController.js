@@ -1,7 +1,7 @@
 
 const student = require("../models/studentModel");
 
-const addStudent = async (req, res) => {
+const addStudent = async (req, res,) => {
   const studentData = new student({
     RegNo: Date.now(),
     name: req.body.name,
