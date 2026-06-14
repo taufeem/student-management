@@ -42,11 +42,14 @@ function Dashboard() {
     if (!isConfirm) {
       return;
     }
-
+    const token = localStorage.getItem("token");
     const response = await fetch(
       `https://student-management-p6ht.onrender.com/students/${selectedId}`,
       {
         method: "DELETE",
+        headers:{
+          Authorization: `Bearer ${token}`,
+        }
       },
     );
     fetchStudetn();

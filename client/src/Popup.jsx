@@ -25,13 +25,15 @@ function Popup({setPop,fetchStudetn,editStudent}) {
       father_name,
       father_job,
     };
+    const token = localStorage.getItem("token")
     if (editStudent) {
    await fetch(
       `https://student-management-p6ht.onrender.com/students/${editStudent._id}`,
       {
          method: "PUT",
          headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
          },
          body: JSON.stringify(student)
       }
