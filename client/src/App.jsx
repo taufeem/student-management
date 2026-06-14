@@ -5,7 +5,7 @@ import Profile from "./Profile.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard.jsx";
 // import Popup from "./popup.jsx";
-import Update from "./update.jsx";
+import Update from "./Update.jsx";
 
 function App() {
   return (
