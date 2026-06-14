@@ -6,7 +6,7 @@ function Profile() {
     const [data,setData] = useState("");
 
     useEffect(()=>{
-      fetch("http://localhost:3000/profile",{
+      fetch("https://student-management-p6ht.onrender.com/profile",{
         headers:{
           Authorization:localStorage.getItem("token")
 
