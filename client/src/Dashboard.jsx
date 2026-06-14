@@ -47,9 +47,7 @@ function Dashboard() {
       `https://student-management-p6ht.onrender.com/students/${selectedId}`,
       {
         method: "DELETE",
-        headers:{
-          Authorization: token,
-        }
+  
       },
     );
     fetchStudetn();
