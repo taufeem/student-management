@@ -14,8 +14,8 @@ router.post("/", addStudent);
 
 router.get("/", getStudent);
 
-router.put("/:id",auth,adminOnly, updateStudent);
+router.put("/:id", updateStudent);
 
-router.delete("/:id",auth,adminOnly, deleteStudent);
+router.delete("/:id", deleteStudent);
 
 module.exports = router;
