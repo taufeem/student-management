@@ -4,7 +4,7 @@ const express = require("express");
 
 const connection = require("./config/db");
 
-const userRoutes = require("./routes/usersRoutes");
+const usersRoutes = require("./routes/usersRoutes");
 
 const auth = require("./middleware/authMiddleware");
 
@@ -28,7 +28,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use("/students", studentsRoutes);
-app.use("/users", userRoutes);
+app.use("/users", usersRoutes);
 
 app.get("/profile", auth, (req, res) => {
   res.send(`Welcome User ${req.user.name}`);
