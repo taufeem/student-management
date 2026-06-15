@@ -9,7 +9,7 @@ import About from "./About.jsx";
 import Setting from "./Setting.jsx";
 
 function Dashboard() {
-  const [search,setSearch] = useState("")
+  const [search, setSearch] = useState("");
   const [editStudent, setEditStudent] = useState("");
   const [student, setStudent] = useState([]);
   const [selectedId, setSelectedId] = useState();
@@ -17,9 +17,17 @@ function Dashboard() {
   const [activePage, setActivePage] = useState("dashboard");
 
   const navigate = useNavigate();
-
+  const token = localStorage.getItem("token");
   const fetchStudetn = async () => {
-    const response = await fetch("https://student-management-p6ht.onrender.com/students");
+    const response = await fetch(
+      "https://student-management-p6ht.onrender.com/students",
+      {
+        headers: {
+          Authorization: token,
+        },
+      },
+    );
+
     const data = await response.json();
 
     setStudent(data);
@@ -29,14 +37,14 @@ function Dashboard() {
     fetchStudetn();
   }, []);
 
-  const searchHandle = student.filter((item)=>
-     item.name.toLowerCase().includes(search.toLowerCase()))
-  
+  const searchHandle = student.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase()),
+  );
 
   const deletehandle = async () => {
-    if(!selectedId){
-       alert("Please Select first");
-       return;
+    if (!selectedId) {
+      alert("Please Select first");
+      return;
     }
     const isConfirm = confirm("Are you confirm to delete");
     if (!isConfirm) {
@@ -47,7 +55,9 @@ function Dashboard() {
       `https://student-management-p6ht.onrender.com/students/${selectedId}`,
       {
         method: "DELETE",
-  
+        headers: {
+          Authorization: token,
+        },
       },
     );
     fetchStudetn();
@@ -78,9 +88,8 @@ function Dashboard() {
               placeholder="Search by student"
               title="Search by student"
               value={search}
-              onChange={(e)=>setSearch(e.target.value)}
+              onChange={(e) => setSearch(e.target.value)}
             />
-          
 
             <button className="bt" onClick={deletehandle} title="Delete">
               Delete
