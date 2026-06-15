@@ -18,8 +18,8 @@ const registerUser = async (req, res) => {
     await newUser.save();
 
     res.json({
-      message:"user registered"
-    })
+      message: "user registered",
+    });
   } catch (err) {
     res.status(500).send(err.message);
   }
@@ -32,9 +32,9 @@ const loginUser = async (req, res) => {
     });
 
     if (!existingUser) {
-      return res.status(404).json({message:"User Not Found"});
+      return res.status(404).json({ message: "User Not Found" });
     }
-    
+
     const isMatch = await bcrypt.compare(
       req.body.password,
       existingUser.password,
@@ -48,9 +48,9 @@ const loginUser = async (req, res) => {
       {
         id: existingUser._id,
         role: existingUser.role,
-        name: existingUser.name
+        name: existingUser.name,
       },
-      "mysecretekey",
+      process.env.JWT_SECRET,
     );
     res.json({ token });
   } catch (err) {

@@ -1,5 +1,4 @@
 require("dotenv").config();
-console.log(process.env.MONGO_URI)
 const express = require("express");
 
 const connection = require("./config/db");
