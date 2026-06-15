@@ -33,7 +33,7 @@ function Popup({setPop,fetchStudetn,editStudent}) {
          method: "PUT",
          headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            Authorization:token
          },
          body: JSON.stringify(student)
       }
@@ -46,7 +46,9 @@ else {
       {
          method: "POST",
          headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization:token
+            
          },
          body: JSON.stringify(student)
       }
