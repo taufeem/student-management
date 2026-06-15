@@ -47,8 +47,9 @@ else {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
+            headers:{
             Authorization:token
-            
+            }
          },
          body: JSON.stringify(student)
       }
