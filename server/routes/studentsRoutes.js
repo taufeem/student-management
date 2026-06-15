@@ -10,12 +10,12 @@ const {
 const auth = require("../middleware/authMiddleware");
 const adminOnly = require("../middleware/adminMiddleware");
 
-router.post("/", addStudent);
+router.post("/",auth, addStudent);
 
-router.get("/", getStudent);
+router.get("/",auth, getStudent);
 
-router.put("/:id", updateStudent);
+router.put("/:id",auth, updateStudent);
 
-router.delete("/:id", deleteStudent);
+router.delete("/:id",auth, deleteStudent);
 
 module.exports = router;
