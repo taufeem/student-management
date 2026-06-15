@@ -3,8 +3,6 @@ import Register from "./Register.jsx";
 import Login from "./Login.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard.jsx";
-// import Popup from "./popup.jsx";
-import Update from "./Update.jsx";
 
 function App() {
   return (
@@ -13,8 +11,6 @@ function App() {
         <Route path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        {/* <Route path="/popup" element={<Popup />} /> */}
-        <Route path='/update' element={<Update />} />
       </Routes>
     </BrowserRouter>
   );
