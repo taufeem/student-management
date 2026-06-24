@@ -2,7 +2,6 @@ import logo from "./assets/O7DCE10.jpg";
 import React, { useEffect, useState } from "react";
 import "./dashboard.css";
 import Popup from "./Popup.jsx";
-import Login from "./Login.jsx";
 import { useNavigate } from "react-router-dom";
 import Career from "./Career.jsx";
 import About from "./About.jsx";
@@ -15,10 +14,13 @@ function Dashboard() {
   const [selectedId, setSelectedId] = useState();
   const [pop, setPop] = useState(false);
   const [activePage, setActivePage] = useState("dashboard");
+  const [loader,setLoading] = useState(false);
 
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  
   const fetchStudetn = async () => {
+    setLoading(true)
     const response = await fetch(
       "https://student-management-p6ht.onrender.com/students",
       {
@@ -31,11 +33,13 @@ function Dashboard() {
     const data = await response.json();
 
     setStudent(data);
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchStudetn();
   }, []);
+
 
   const searchHandle = student.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase()),
@@ -132,6 +136,7 @@ function Dashboard() {
           {activePage === "About us" && <About />}
           {activePage === "setting" && <Setting />}
           {activePage === "dashboard" && (
+            <>{loader ? <h1>Loading...</h1>:
             <div className="tableset">
               <table className="table">
                 <thead>
@@ -168,7 +173,7 @@ function Dashboard() {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </div>}</>
           )}
         </div>
       </div>

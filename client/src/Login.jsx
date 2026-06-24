@@ -6,12 +6,13 @@ import { Link, useNavigate } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [Loading,setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true)
     try {
       const res = await fetch("https://student-management-p6ht.onrender.com/users/login", {
         method: "POST",
@@ -58,7 +59,7 @@ function Login() {
           />
           <br />
           <br />
-          <button type="submit">Sign in</button>
+          <button type="submit">{Loading ? "Loading...":"Sign in"}</button>
         </form>
       </div>
 
