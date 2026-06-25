@@ -63,8 +63,6 @@ else {
   return (
     <>
       <div className="p"></div>
-      
-    
         <div className="modal">
           <div className="form-header">
           <h2>Admission form</h2>
